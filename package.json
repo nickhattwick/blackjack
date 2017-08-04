@@ -1,0 +1,25 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "description": "Play Blackjack",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickhattwick/blackjack.git"
+  },
+  "keywords": [
+    "blackjack"
+  ],
+  "author": "Nick Hattwick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickhattwick/blackjack/issues"
+  },
+  "homepage": "https://github.com/nickhattwick/blackjack#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
