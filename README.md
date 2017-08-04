@@ -34,14 +34,12 @@ Once the project moves into development, the press release can be used as a touc
     -Nick Hattwick, 08-04-17 ##
 
 ## The plan ##
-  > create and deploy a server
-  > Attach a Mongo Database with data on the 52 cards
-  > Build game logic on server
+  > create and deploy a server<br>
+  > Attach a Mongo Database with data on the 52 cards<br>
+  > Build game logic on server<br>
   > Use React front end
 
 ## "Quotes From Future Satisfied Customers" ##
-  > "Wow, I love how dynamically this app renders using React"
-  > "The database he uses sure is Mongo"
   > "I've played every Blackjack game on the market, and can confidently say this is Blackjack"
 
 ## What are you waiting for? ##
