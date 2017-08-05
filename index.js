@@ -21,12 +21,12 @@ var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
 console.log(ranks);
 var idPlace = 1;
-for (var i = 0; i < suits.length; i++) {
-  for (var j = 0; j < ranks.length; j++) {
-    Deck.create({ id: idPlace, suit: suits[i], rank: ranks[j]});
-    idPlace += 1;
-  }
-}
+// for (var i = 0; i < suits.length; i++) {
+//   for (var j = 0; j < ranks.length; j++) {
+//     Deck.create({ id: idPlace, suit: suits[i], rank: ranks[j]});
+//     idPlace += 1;
+//   }
+// }
 
 var deck = [];
 
@@ -41,7 +41,7 @@ console.log(deck);
 app.get('/', function(req, res) {
   fs.readFile('./client/index.html', 'utf8', (err, data) => {
     if (err) throw err;
-    console.log('Deck: ', deck);
+    console.log('Deck: ', deck[0].length);
     console.log('Data: ', data);
     res.send(data);
   });
