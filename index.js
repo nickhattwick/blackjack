@@ -18,17 +18,17 @@ var cardSchema = new Schema({
 var Deck = mongoose.model('Deck', cardSchema);
 //Uncomment below to rebuild 52 card deck
 
-var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
-var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+// var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
+// var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
 
-var idPlace = 1;
-for (var i = 0; i < suits.length; i++) {
-  for (var j = 0; j < ranks.length; j++) {
-    var imgLoc = ranks[j] + '_of_' + suits[i] + '.png';
-    Deck.create({ id: idPlace, suit: suits[i], rank: ranks[j], img: imgLoc});
-    idPlace += 1;
-  }
-}
+// var idPlace = 1;
+// for (var i = 0; i < suits.length; i++) {
+//   for (var j = 0; j < ranks.length; j++) {
+//     var imgLoc = ranks[j] + '_of_' + suits[i] + '.png';
+//     Deck.create({ id: idPlace, suit: suits[i], rank: ranks[j], img: imgLoc});
+//     idPlace += 1;
+//   }
+// }
 
 var deck = [];
 
