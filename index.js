@@ -34,20 +34,23 @@ var deck = [];
 
 Deck.find({}, function(err, card) {
   if (err) return handleError(err);
-  console.log(card);
+  //console.log(card);
   deck.push(card);
 });
 
 console.log(deck);
 
-app.get('/', function(req, res) {
-  fs.readFile('./client/index.html', 'utf8', (err, data) => {
-    if (err) throw err;
-    console.log('Deck: ', deck[0].length, deck);
-    console.log('Data: ', data);
-    res.send(data);
-  });
-})
+app.use(express.static(__dirname));
+
+// app.get('/', function(req, res) {
+//   fs.readFile('./compiled/client/index.html', 'utf8', (err, data) => {
+//     if (err) throw err;
+//     //console.log('Deck: ', deck[0].length, deck);
+//     //console.log('Data: ', data);
+//     //res.send(data);
+
+//   });
+// })
 
 app.listen(3000, function() {
   console.log('Blakjck listening on 3000');
