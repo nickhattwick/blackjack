@@ -1,6 +1,7 @@
 var express = require('express');
 var fs = require('fs');
 var app = express();
+var db = require('mongodb');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/myapp', {
   useMongoClient: true
@@ -17,6 +18,7 @@ var Deck = mongoose.model('Deck', cardSchema);
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
 var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
+
 console.log(ranks);
 var idPlace = 1;
 for (var i = 0; i < suits.length; i++) {
@@ -26,14 +28,20 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
-Deck.find({suit: 'Diamonds'}, 'id suit rank', function(err, card) {
+var deck = [];
+
+Deck.find({}, function(err, card) {
   if (err) return handleError(err);
   console.log(card);
+  deck.push(card);
 });
+
+console.log(deck);
 
 app.get('/', function(req, res) {
   fs.readFile('./client/index.html', 'utf8', (err, data) => {
     if (err) throw err;
+    console.log('Deck: ', deck);
     console.log('Data: ', data);
     res.send(data);
   });
