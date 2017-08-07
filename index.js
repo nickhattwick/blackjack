@@ -2,10 +2,13 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 var db = require('mongodb');
+var path = require('path');
+var shuffle = require('shuffle-array');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/myapp', {
   useMongoClient: true
 });
+
 var Schema = mongoose.Schema;
 
 var cardSchema = new Schema({
@@ -38,19 +41,14 @@ Deck.find({}, function(err, card) {
   deck.push(card);
 });
 
-console.log(deck);
+app.use(express.static(path.join(__dirname, '/compiled')));
 
-app.use(express.static(__dirname));
+app.get('/getdeck', function(request, response) {
+  console.log('sending deck');
+  shuffle(deck[0]);
+  response.send(JSON.stringify(deck));
+})
 
-// app.get('/', function(req, res) {
-//   fs.readFile('./compiled/client/index.html', 'utf8', (err, data) => {
-//     if (err) throw err;
-//     //console.log('Deck: ', deck[0].length, deck);
-//     //console.log('Data: ', data);
-//     //res.send(data);
-
-//   });
-// })
 
 app.listen(3000, function() {
   console.log('Blakjck listening on 3000');

@@ -4,7 +4,7 @@
   "description": "Play Blackjack",
   "main": "index.js",
   "scripts": {
-    "compile": "babel . --out-dir compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline --watch",
+    "compile": "babel . --out-dir compiled --presets=es2015,react --ignore=node_modules,compiled,index.js --source-maps inline --watch",
     "start": "node index.js",
     "quick": "npm run compile | npm start"
   },
@@ -23,10 +23,13 @@
   "homepage": "https://github.com/nickhattwick/blackjack#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "http": "0.0.0",
     "mongodb": "^2.2.30",
     "mongoose": "^4.11.5",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-image-resizer": "^1.2.0",
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
